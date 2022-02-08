@@ -7,6 +7,10 @@ local Mouse = LocalPlayer:GetMouse()
 local PresetColor = Color3.fromRGB(44, 120, 224)
 local CloseBind = Enum.KeyCode.RightControl
 
+if game:GetService('CoreGui'):FindFirstChild("Borb<3Hub") then
+    game:GetService('CoreGui')["Borb<3Hub"]:Destroy()
+end
+
 local ui = Instance.new("ScreenGui")
 ui.Name = 'Borb<3Hub'
 syn.protect_gui(ui)
