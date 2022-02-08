@@ -8,7 +8,7 @@ local PresetColor = Color3.fromRGB(44, 120, 224)
 local CloseBind = Enum.KeyCode.RightControl
 
 local ui = Instance.new("ScreenGui")
-ui.Name = math.random(100000,999999)
+ui.Name = 'Borb<3Hub'
 syn.protect_gui(ui)
 ui.Parent = game:GetService('CoreGui')
 ui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
