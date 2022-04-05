@@ -159,15 +159,9 @@ function Library:CreateWindow(Config, Parent)
 		Holder.TileSize = UDim2.new(Scale,0,Scale,0)
 	end
 
-	local Loop
-	Loop = RunService.RenderStepped:Connect(function()
+	RunService.RenderStepped:Connect(function()
 		if Library.Toggle then
 			Screen.ToolTip.Position = UDim2.new(0,UserInputService:GetMouseLocation().X + 10,0,UserInputService:GetMouseLocation().Y - 5)
-		end
-		for i,v in pairs(game:GetService('CoreGui'):GetChildren()) do
-		    if v.Name == 'poopooSense' then
-			Loop:Disconnect()
-		    end
 		end
 	end)
 
