@@ -1,3 +1,9 @@
+for i,v in pairs(game:GetService('CoreGui'):GetChildren()) do
+    if v.Name == 'poopooSense' then
+        v:Destroy() 
+    end
+end
+
 local Library = {Toggle = true,FirstTab = nil,TabCount = 0,ColorTable = {}}
 
 local RunService = game:GetService("RunService")
@@ -153,9 +159,15 @@ function Library:CreateWindow(Config, Parent)
 		Holder.TileSize = UDim2.new(Scale,0,Scale,0)
 	end
 
-	RunService.RenderStepped:Connect(function()
+	local Loop
+	Loop = RunService.RenderStepped:Connect(function()
 		if Library.Toggle then
 			Screen.ToolTip.Position = UDim2.new(0,UserInputService:GetMouseLocation().X + 10,0,UserInputService:GetMouseLocation().Y - 5)
+		end
+		for i,v in pairs(game:GetService('CoreGui'):GetChildren()) do
+		    if v.Name == 'poopooSense' then
+			Loop:Disconnect()
+		    end
 		end
 	end)
 
